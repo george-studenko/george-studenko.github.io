@@ -28,30 +28,15 @@ bio.display = function() {
     var picture = HTMLbioPic.replace("%data%", bio.biopic);
     var welcome = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
 
+    $("#header").prepend(formattedName, role);
+    $("#header").append(picture, welcome);
 
-    $("#header").prepend(role);
-    $("#header").prepend(formattedName);
-
-    $("#topContacts").append(mobile);
-    $("#topContacts").append(email);
-    $("#topContacts").append(twitter);
-    $("#topContacts").append(github);
-    $("#topContacts").append(blog);
-    $("#topContacts").append(location);
-
-    $("#footerContacts").append(mobile);
-    $("#footerContacts").append(email);
-    $("#footerContacts").append(twitter);
-    $("#footerContacts").append(github);
-    $("#footerContacts").append(blog);
-    $("#footerContacts").append(location);
-
-    $("#header").append(picture);
-    $("#header").append(welcome);
+    $("#topContacts").append(mobile, email, twitter, github, blog, location);
+    $("#footerContacts").append(mobile, email, twitter, github, blog, location);
 
     if (bio.skills.length > 0) {
         $("#header").append(HTMLskillsStart);
-        for (i in bio.skills) {
+        for (var i=0;i< bio.skills.length; i++) {
             var currentSkill = HTMLskills.replace("%data%", bio.skills[i]);
             $("#skills").append(currentSkill);
         }
@@ -99,7 +84,7 @@ projects.display = function() {
             proImages = proImages + HTMLprojectImage.replace("%data%", projects.projects[i].images[n]);
         }
         $(".project-entry:last").append(
-            HTMLprojectTitle.replace("%data%", projects.projects[i].title) +
+            HTMLprojectTitle.replace("%data%", projects.projects[i].title).replace("#",projects.projects[i].url) +
             HTMLprojectDates.replace("%data%", projects.projects[i].dates) +
             HTMLprojectDescription.replace("%data%", projects.projects[i].description) +
             proImages);
@@ -136,7 +121,7 @@ var work = {
             "description": "Installed, configured, maintained, and fixed computers and networks. Helped to install the software required by the teachers for teaching. Installed, configured, monitored, and maintained computer hardware, operating systems, and software applications. Responsible for troubleshooting system and network problems and diagnosing hardware and software failures. Supported roll-out of the new applications and set up new users’ accounts"
         }
     ]
-}
+};
 
 work.display = function() {
     for (var i = 0; i < work.jobs.length; i++) {
@@ -229,7 +214,7 @@ education.display = function() {
     for (var i = 0; i < education.schools.length; i++) {
         $("#education").append(HTMLschoolStart);
         $(".education-entry:last").append(
-            HTMLschoolName.replace("%data%", education.schools[i].name) +
+            HTMLschoolName.replace("%data%", education.schools[i].name).replace("#",education.schools[i].url) +
             HTMLschoolDegree.replace("%data%", education.schools[i].degree) +
             HTMLschoolDates.replace("%data%", education.schools[i].dates) +
             HTMLschoolLocation.replace("%data%", education.schools[i].location) +
@@ -242,10 +227,10 @@ education.display = function() {
     for (var i = 0; i < education.onlineCourses.length; i++) {
         $("#education").append(HTMLschoolStart);
         $(".education-entry:last").append(
-            HTMLonlineTitle.replace("%data%", education.onlineCourses[i].title) +
+            HTMLonlineTitle.replace("%data%", education.onlineCourses[i].title).replace("#",education.onlineCourses[i].url) +
             HTMLonlineSchool.replace("%data%", education.onlineCourses[i].school) +
             HTMLonlineDates.replace("%data%", education.onlineCourses[i].dates) +
-            HTMLonlineURL.replace("%data%", education.onlineCourses[i].url)
+            HTMLonlineURL.replace("%data%", education.onlineCourses[i].url).replace("#",education.onlineCourses[i].url)
         );
     }
 };
