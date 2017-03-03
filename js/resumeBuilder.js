@@ -1,5 +1,5 @@
 var bio = {
-    "welcomeMessage": "Microsoft Certified IT Professional with many years of experience, fluent in Spanish/English, trained in statistical analysis, educated in computer technologies, strong programming skills and experienced in front and back end web development.",
+    "welcomeMessage": "Microsoft Certified IT Professional with many years of experience, fluent in Spanish/English, trained in statistical analysis, educated in computer technologies, strong programming skills and experienced in front/back end web development and Android development.",
     "name": "George N. Studenko Debicki",
     "role": "Web Developer",
     "contacts": {
@@ -10,8 +10,8 @@ var bio = {
         "blog": "georgestudenko.com",
         "location": "Barcelona, Spain"
     },
-    "biopic": "images/george.jpg",
-    "skills": ["HTML5", "CSS3", "Responsive Web Design", "Bootstrap", "Javascript", "jQuery", "JSON", "AngularJS","Grunt", "NopCommerce Customization", "Umbraco", "Magento", "Wordpress", "SEO", "SEM", "OOP", "ASP.NET", "Webforms", "MVC", "SQL Sever", "Database Developer", "Database Administrator", "T-SQL", "Reporting Services", ".NET Framework", "C#", "WinForms", "EPPlus", "Xamarin", "Android Development", "Java", "Wireless Networks", "Wired Networks EIA/TIA 568A/B", "Windows Server"]
+    "biopic": "images/George-Studenko-800.jpg",
+    "skills": ["Android Studio", "HTML5", "CSS3", "Responsive Web Design", "Bootstrap", "Javascript", "jQuery", "JSON", "AngularJS","Grunt", "NopCommerce Customization", "Umbraco", "Magento", "Wordpress", "SEO", "SEM", "OOP", "ASP.NET", "Webforms", "MVC", "SQL Sever", "Database Developer", "Database Administrator", "T-SQL", "Reporting Services", ".NET Framework", "C#", "WinForms", "EPPlus", "Xamarin", "Android Development", "Java", "Wireless Networks", "Wired Networks EIA/TIA 568A/B", "Windows Server"]
 };
 
 bio.display = function() {
@@ -164,7 +164,20 @@ var education = {
         }
 
     ],
-    "onlineCourses": [{
+    "onlineCourses": [
+		{
+            "title": "Front End Web Developer Nanodegree",
+            "school": "Udacity",
+            "dates": "2016 - 2017",
+            "url": "https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001"
+        },
+		{
+            "title": "Associate Android Developer Fast Track",
+            "school": "Udacity",
+            "dates": "2016 - 2017",
+            "url": "https://www.udacity.com/course/associate-android-developer-fast-track--nd818"
+        },
+		{
             "title": "Learn Visual Studio .NET",
             "school": "Learnvisualstudio.net",
             "dates": "2007 - 2015",
@@ -193,13 +206,7 @@ var education = {
             "school": "CodeSchool.com",
             "dates": "2016 - 2017",
             "url": "https://www.codeschool.com/users/gnstudenko"
-        },
-        {
-            "title": "Udacity",
-            "school": "Udacity.com",
-            "dates": "2016 - 2017",
-            "url": "https://profiles.udacity.com/u/georgestudenko"
-        },
+        },      
 
         {
             "title": "edX",
@@ -236,14 +243,13 @@ education.display = function() {
 };
 
 function inName(oldName) {
-    var finalName = oldName;
-    // Your code goes here!
+    var finalName = oldName;    
     var firstName = oldName.split(' ')[0];
     var lastName = oldName.split(' ')[1];
     firstName = firstName.toLowerCase();
     firstName = firstName.charAt(0).toUpperCase() + firstName.slice(1);
     finalName = firstName + ' ' + lastName.toUpperCase();
-    // Don't delete this line!
+    
     return finalName;
 }
 
