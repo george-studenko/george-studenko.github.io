@@ -179,9 +179,10 @@ ul {
 
 .biopic {
     float: left;
-    padding: 10px;
+    padding: 0px !important;
     width: 200px;
     display: none;
+	border-radius:360px;
 }
 
 img {
